@@ -28,3 +28,11 @@ npx electron-builder@26.15.3 --config builder.config.cjs
 
 Voir la release [`files-v1.0.0`](https://github.com/powercore649/Rezo-craft/releases/tag/files-v1.0.0) :
 `NovaCraft-Files-Setup-1.0.0.exe`, `novacraft-files-1.0.0.exe` et `SHA256SUMS.txt`.
+
+## Intégration continue
+
+Le workflow `.github/workflows/build-files.yml` construit l’installeur et le portable à
+chaque tag `files-v*`, publie un artefact de build et joint les fichiers à la release
+correspondante, sans jamais la marquer « latest » afin de préserver le canal de mise à
+jour du lanceur. Il peut aussi être lancé manuellement (`workflow_dispatch`), avec un
+tag de release optionnel.

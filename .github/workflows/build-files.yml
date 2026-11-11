@@ -1,0 +1,77 @@
+name: Construire NovaCraft Fichiers
+
+on:
+  push:
+    tags:
+      - 'files-v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release à compléter (laisser vide pour seulement construire)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Installeur Windows
+    runs-on: windows-latest
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+    defaults:
+      run:
+        working-directory: file-explorer-app
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Préparer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Construire l’installeur et le portable
+        run: npx --yes electron-builder@26.15.3 --config builder.config.cjs --publish never
+
+      - name: Calculer les empreintes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd ../build-output/files
+          sha256sum NovaCraft-Files-Setup-*.exe novacraft-files-*.exe NovaCraft-Files-Setup-*.exe.blockmap > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Publier l’artefact de build
+        uses: actions/upload-artifact@v4
+        with:
+          name: novacraft-files-windows-x64
+          path: |
+            build-output/files/NovaCraft-Files-Setup-*.exe
+            build-output/files/NovaCraft-Files-Setup-*.exe.blockmap
+            build-output/files/novacraft-files-*.exe
+            build-output/files/SHA256SUMS.txt
+          if-no-files-found: error
+
+      - name: Joindre à la release
+        if: startsWith(github.ref, 'refs/tags/files-v') || inputs.tag != ''
+        shell: bash
+        working-directory: .
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          set -euo pipefail
+          if ! gh release view "$TAG" > /dev/null 2>&1; then
+            gh release create "$TAG" \
+              --title "NovaCraft Fichiers ${TAG#files-}" \
+              --notes "Build automatique de NovaCraft Fichiers." \
+              --latest=false
+          fi
+          gh release upload "$TAG" \
+            build-output/files/NovaCraft-Files-Setup-*.exe \
+            build-output/files/NovaCraft-Files-Setup-*.exe.blockmap \
+            build-output/files/novacraft-files-*.exe \
+            build-output/files/SHA256SUMS.txt \
+            --clobber
