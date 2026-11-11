@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+    <title>NovaCraft Fichiers</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="titlebar">
+      <div class="titlebar__app">
+        <span class="titlebar__logo">F</span>
+        <span>NovaCraft Fichiers</span>
+      </div>
+      <div class="tab" id="tab">
+        <span class="tab__icon" id="tab-icon"></span>
+        <span class="tab__title" id="tab-title">Chargement…</span>
+        <button class="tab__close" id="tab-close" type="button" aria-label="Fermer l’onglet">×</button>
+      </div>
+      <button class="tab-add" id="tab-add" type="button" aria-label="Nouvel onglet">+</button>
+      <div class="titlebar__spacer"></div>
+      <div class="wincontrols">
+        <button id="win-min" class="wincontrols__btn" type="button" aria-label="Réduire"></button>
+        <button id="win-max" class="wincontrols__btn" type="button" aria-label="Agrandir"></button>
+        <button id="win-close" class="wincontrols__btn wincontrols__btn--close" type="button" aria-label="Fermer"></button>
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="nav__buttons">
+        <button id="nav-back" class="iconbtn" type="button" aria-label="Précédent"></button>
+        <button id="nav-forward" class="iconbtn" type="button" aria-label="Suivant"></button>
+        <button id="nav-up" class="iconbtn" type="button" aria-label="Dossier parent"></button>
+        <button id="nav-refresh" class="iconbtn" type="button" aria-label="Actualiser"></button>
+      </div>
+      <div class="crumbs" id="crumbs"></div>
+      <label class="search">
+        <span class="search__icon" id="search-icon"></span>
+        <input id="search" type="search" placeholder="Rechercher dans : Téléchargements" autocomplete="off" spellcheck="false">
+      </label>
+    </div>
+
+    <div class="cmdbar">
+      <button id="cmd-new" class="cmd cmd--label" type="button"><span id="cmd-new-icon"></span>Nouveau<span class="cmd__chevron" id="cmd-new-chevron"></span></button>
+      <span class="cmdbar__sep"></span>
+      <button id="cmd-cut" class="cmd" type="button" aria-label="Couper"></button>
+      <button id="cmd-copy" class="cmd" type="button" aria-label="Copier"></button>
+      <button id="cmd-paste" class="cmd" type="button" aria-label="Coller"></button>
+      <button id="cmd-rename" class="cmd" type="button" aria-label="Renommer"></button>
+      <button id="cmd-delete" class="cmd" type="button" aria-label="Supprimer"></button>
+      <span class="cmdbar__spacer"></span>
+      <button id="cmd-sort" class="cmd cmd--label" type="button"><span id="cmd-sort-icon"></span>Trier<span class="cmd__chevron" id="cmd-sort-chevron"></span></button>
+      <button id="cmd-view" class="cmd cmd--label" type="button"><span id="cmd-view-icon"></span>Affichage<span class="cmd__chevron" id="cmd-view-chevron"></span></button>
+      <button id="cmd-more" class="cmd" type="button" aria-label="Plus d’options"></button>
+      <button id="cmd-details" class="cmd cmd--label" type="button"><span id="cmd-details-icon"></span>Détails</button>
+    </div>
+
+    <div class="body">
+      <aside class="side" id="side"></aside>
+      <main class="content">
+        <div class="head" id="head">
+          <label class="head__check"><input id="select-all" type="checkbox" aria-label="Tout sélectionner"></label>
+          <button class="head__col" data-sort="name" type="button">Nom</button>
+          <button class="head__col" data-sort="mtime" type="button">Modifié le</button>
+          <button class="head__col" data-sort="type" type="button">Type</button>
+          <button class="head__col head__col--right" data-sort="size" type="button">Taille</button>
+        </div>
+        <div class="list" id="list" tabindex="0"></div>
+      </main>
+      <aside class="details" id="details" hidden>
+        <div class="details__head">
+          <span>Détails</span>
+          <button id="details-close" class="iconbtn" type="button" aria-label="Fermer les détails">×</button>
+        </div>
+        <div class="details__body" id="details-body"></div>
+      </aside>
+    </div>
+
+    <div class="statusbar">
+      <span id="status">Prêt</span>
+      <div class="statusbar__views">
+        <span class="statusbar__hint">Détails</span>
+      </div>
+    </div>
+
+    <div class="menu" id="menu" hidden></div>
+    <div class="overlay" id="overlay" hidden></div>
+
+    <script type="module" src="renderer.js"></script>
+  </body>
+</html>

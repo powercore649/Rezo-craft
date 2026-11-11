@@ -1,0 +1,9 @@
+{
+  "name": "novacraft-files",
+  "productName": "NovaCraft Fichiers",
+  "version": "1.0.0",
+  "description": "Gestionnaire de fichiers autonome NovaCraft, inspiré de l’Explorateur Windows 11.",
+  "author": "NovaCraft",
+  "private": true,
+  "main": "main.js"
+}
