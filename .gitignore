@@ -1,0 +1,17 @@
+x-minecraft-launcher-master/.zed.zip
+x-minecraft-launcher-master/rezo-craft.exe
+x-minecraft-launcher-master/.zed.zip
+x-minecraft-launcher-master/rezo-craft.exe
+x-minecraft-launcher-master/.zed.zip
+x-minecraft-launcher-master/rezo-craft.exe
+node_modules/
+node_modules/
+x-minecraft-launcher-master/.zed.zip
+x-minecraft-launcher-master/rezo-craft.exe
+node_modules/
+
+# Builds locaux (installeurs, portables)
+x-minecraft-launcher-master/build-output/
+x-minecraft-launcher-master/share/
+*.blockmap
+x-minecraft-launcher-master/xmcl-electron-app/build/output-*/

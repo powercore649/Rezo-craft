@@ -1,0 +1,2 @@
+var e=class{instance="";pendingFileCount=0;unresolvedFiles=[];pendingFileCountSet(e){this.pendingFileCount=e}unresolvedFilesSet(e){this.unresolvedFiles=e}},n="InstanceInstallService";export{e as n,n as t};
+//# sourceMappingURL=InstanceInstallService-B0NmlOZu.js.map

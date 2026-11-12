@@ -1,0 +1,2 @@
+import{t as e}from"./vuetify-DSlly7oG.js";function useVuetifyColor(){return{getColorCode:o=>{const t=e.theme.global.name.value,r=(e.theme.themes.value[t]?.colors)?.[o];return r||o}}}export{useVuetifyColor as t};
+//# sourceMappingURL=vuetify-CjKkCd6j.js.map

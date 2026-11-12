@@ -1,0 +1,9 @@
+{
+  "name": "novacraft-suite",
+  "productName": "NovaCraft Suite",
+  "version": "1.0.0",
+  "description": "Suite bureautique NovaCraft : Word, Sheets, Slides, PDF et Notes.",
+  "author": "NovaCraft",
+  "private": true,
+  "main": "main.js"
+}

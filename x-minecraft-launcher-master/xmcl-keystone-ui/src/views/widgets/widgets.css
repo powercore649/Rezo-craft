@@ -1,0 +1,65 @@
+.widget-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: rgba(var(--v-theme-surface), 0.35);
+  border: var(--card-subsection-border);
+  border-radius: var(--card-item-radius);
+}
+
+.widget-metric + .widget-metric {
+  margin-top: 12px;
+}
+
+.widget-metric__head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.widget-metric__hint {
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+.widget-link {
+  display: block;
+  padding: 8px;
+  border: 1px solid rgba(var(--v-border-color), 0.16);
+  border-radius: 10px;
+  background: rgba(var(--v-theme-surface), 0.4);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.16s ease;
+}
+
+.widget-link:hover {
+  border-color: rgb(var(--v-theme-primary));
+}
+
+.widget-link__title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 500;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.widget-link__hint {
+  margin-top: 3px;
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+.widget-clock__time {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}

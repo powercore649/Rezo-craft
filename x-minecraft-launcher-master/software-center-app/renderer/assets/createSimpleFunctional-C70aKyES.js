@@ -1,0 +1,2 @@
+import{At as t,Ci as a,Or as e,Si as s,wt as l}from"./VBtn-8xS-LKIk.js";function createSimpleFunctional(r,i="div",n){return l()({name:n??a(s(r.replace(/__/g,"-"))),props:{tag:{type:String,default:i},...t()},setup:(t,{slots:a})=>()=>e(t.tag,{class:[r,t.class],style:t.style},a.default?.())})}export{createSimpleFunctional as t};
+//# sourceMappingURL=createSimpleFunctional-C70aKyES.js.map

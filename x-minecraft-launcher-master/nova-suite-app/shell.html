@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+    <title>NovaCraft Suite</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app">
+      <aside class="rail" id="rail"></aside>
+      <main class="stage">
+        <header class="topbar">
+          <div class="topbar__title">
+            <span id="app-name">NovaCraft Suite</span>
+            <span id="app-tagline" class="muted"></span>
+          </div>
+        </header>
+        <section id="view" class="view"></section>
+        <footer class="statusbar"><span id="status-left"></span><span id="status-right">NovaCraft Suite</span></footer>
+      </main>
+    </div>
+    <script type="module" src="shell.js"></script>
+  </body>
+</html>

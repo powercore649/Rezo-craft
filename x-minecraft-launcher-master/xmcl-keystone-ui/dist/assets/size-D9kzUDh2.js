@@ -1,0 +1,2 @@
+var n=window.navigator.platform.startsWith("Win")?"\\":"/";function join(...t){return t.join(n)}function basename(t,a=n){return t.substring(t.lastIndexOf(a)+1)}var getExpectedSize=(n,t="B",a=2)=>{let r="K"+t;return(n/=1024)>1024&&(n/=1024,r="M"+t),n>1024&&(n/=1024,r="G"+t),`${Math.abs(n).toFixed(a)}${r}`};export{basename as n,join as r,getExpectedSize as t};
+//# sourceMappingURL=size-D9kzUDh2.js.map

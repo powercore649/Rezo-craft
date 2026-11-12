@@ -1,0 +1,2 @@
+var o="ProjectMappingService";function isNoModLoader(o){return!(o.forge||o.fabricLoader||o.quiltLoader||o.neoForged)}export{o as n,isNoModLoader as t};
+//# sourceMappingURL=isNoModloader-7VoNz-gf.js.map

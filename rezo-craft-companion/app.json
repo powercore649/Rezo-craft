@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "REZO-craft",
+    "slug": "raphael",
+    "scheme": "rezocraft",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B1210",
+    "primaryColor": "#2ED87E",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rezocraft.companion",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.rezocraft.companion",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B1210",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./public/favicon.png",
+      "lang": "fr",
+      "name": "REZO-craft",
+      "shortName": "REZO-craft",
+      "description": "Compagnon du launcher Minecraft Java REZO-craft : Discord, téléchargement et liens utiles.",
+      "themeColor": "#0B1210",
+      "backgroundColor": "#0B1210"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#0B1210"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "6615fb10-cf82-49bb-b40c-a00ace44053e"
+      }
+    },
+    "owner": "novalead1231s-team"
+  }
+}

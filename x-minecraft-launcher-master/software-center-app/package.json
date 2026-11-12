@@ -1,0 +1,9 @@
+{
+  "name": "novacraft-software-center",
+  "productName": "NovaCraft Software Center",
+  "version": "1.7.0",
+  "description": "Catalogue NovaCraft : Word, Sheets, Slides, PDF, Notes et Fichiers.",
+  "author": "NovaCraft",
+  "private": true,
+  "main": "main.js"
+}
